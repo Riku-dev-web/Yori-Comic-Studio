@@ -1,0 +1,14 @@
+YORI COMIC STUDIO - CREER UN .EXE SANS INSTALLER PYTHON SUR TON PC
+
+1. Cree un compte sur https://github.com si besoin.
+2. Cree un depot PUBLIC ou PRIVE, par exemple Yori-Comic-Studio.
+3. Dans le depot, clique Add file > Upload files.
+4. Envoie le CONTENU du dossier Yori_Comic_Studio (main.py, requirements.txt, .github, etc.) a la RACINE du depot. IMPORTANT : le dossier cache .github doit aussi etre present. Le plus simple est de glisser les fichiers et le dossier .github depuis l'explorateur Windows.
+5. Clique Commit changes.
+6. Ouvre l'onglet Actions > Compiler Yori Comic Studio EXE > Run workflow.
+7. Attends que la compilation soit terminee (coche verte).
+8. Ouvre l'execution, puis clique sur YoriComicStudio-Windows-EXE dans Artifacts.
+9. Decompresse le fichier telecharge. Tu trouveras YoriComicStudio.exe.
+
+Python est utilise uniquement sur les serveurs GitHub pour fabriquer le EXE : pas besoin de l'installer sur ton PC.
+Note : Windows SmartScreen peut avertir pour un logiciel non signe. N'execute que les programmes dont tu connais la provenance.
