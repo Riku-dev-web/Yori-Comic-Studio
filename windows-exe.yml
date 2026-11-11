@@ -1,0 +1,27 @@
+name: Compiler Yori Comic Studio EXE
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Recuperer le projet
+        uses: actions/checkout@v4
+      - name: Installer Python pour la compilation
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer les dependances
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Compiler l'application Windows
+        run: python -m PyInstaller --noconfirm --clean --onefile --windowed --name YoriComicStudio main.py
+      - name: Publier le EXE telechargeable
+        uses: actions/upload-artifact@v4
+        with:
+          name: YoriComicStudio-Windows-EXE
+          path: dist/YoriComicStudio.exe
+          if-no-files-found: error
